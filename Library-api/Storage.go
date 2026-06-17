@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"time"
 )
 
 var BookCache map[int]*Book
@@ -38,4 +39,11 @@ func SaveBook(books map[int]*Book) error {
 		return err
 	}
 	return nil
+}
+
+func BackStats() {
+	for {
+		fmt.Printf("Фоновая запись : колличество книг на данные момент : %d\n", len(BookCache))
+		time.Sleep(1 * time.Minute)
+	}
 }

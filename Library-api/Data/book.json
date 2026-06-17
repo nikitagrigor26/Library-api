@@ -1,23 +1,30 @@
 {
-  "1": {
-    "ID": 1,
-    "Title": "1984",
-    "Author": "Джордж Оруэлл",
-    "Year": 1949,
-    "IsAvailable": true
-  },
-  "2": {
-    "ID": 2,
-    "Title": "Властелин Колец",
-    "Author": "Дж. Р. Р. Толкин",
-    "Year": 1954,
-    "IsAvailable": false
-  },
-  "3": {
-    "ID": 3,
-    "Title": "Мастер и Маргарита",
-    "Author": "Михаил Булгаков",
-    "Year": 1967,
-    "IsAvailable": true
-  }
+	"1": {
+		"ID": 1,
+		"Title": "1984",
+		"Author": "Джордж Оруэлл",
+		"Year": 1949,
+		"IsAvailable": true
+	},
+	"2": {
+		"ID": 2,
+		"Title": "Властелин Колец",
+		"Author": "Дж. Р. Р. Толкин",
+		"Year": 1954,
+		"IsAvailable": false
+	},
+	"3": {
+		"ID": 3,
+		"Title": "Мастер и Маргарита",
+		"Author": "Михаил Булгаков",
+		"Year": 1967,
+		"IsAvailable": true
+	},
+	"4": {
+		"ID": 4,
+		"Title": "Автостопом по галактике",
+		"Author": "Дуглас Адамс",
+		"Year": 1979,
+		"IsAvailable": true
+	}
 }
