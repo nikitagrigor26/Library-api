@@ -55,17 +55,15 @@ func BookHandler(w http.ResponseWriter, r *http.Request) {
 func addBookHandler(w http.ResponseWriter, r *http.Request) {
 	var newBook Book
 	json.NewDecoder(r.Body).Decode(&newBook)
-	if _, ok := BookCache[newBook.ID]; ok {
-		fmt.Fprintf(w, "Книга с таким Id существует, введите новый id")
-		return
-	}
-	BookCache[newBook.ID] = &newBook
-	err := SaveBook(BookCache)
+	insertQuery := `INSERT INTO books(title, author, year, is_available) VALUES (@p1, @p2, @p3, @p4)`
+	_, err := DB.Exec(insertQuery, newBook.Title, newBook.Author, newBook.Year, newBook.IsAvailable)
+
 	if err != nil {
-		fmt.Fprintf(w, "Ошибка записи")
+		fmt.Println("Ошибка при добавлении в БД:", err)
+		http.Error(w, "Ошибка сохранения в базу данных", http.StatusInternalServerError)
 		return
 	}
-	fmt.Fprintf(w, "Книга добавлена")
+	fmt.Fprintf(w, "книга добавлена")
 }
 func deleteBookHandler(w http.ResponseWriter, r *http.Request) {
 	idText := r.PathValue("id")

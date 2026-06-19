@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	InitBook()
+	InitDB()
 	mux := http.NewServeMux()
 	loggegMux := LogingMiddelware(mux)
 	go BackStats()
